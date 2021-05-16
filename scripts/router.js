@@ -71,7 +71,7 @@ document.addEventListener('click', function(event) {
     router.setState("Settings", "/#settings", "settings");
   }
   else if (event.target.isSameNode(document.querySelector('header h1'))) {  // title header clicked (return to main page)
-    router.setState("Journal Entries", " ", "");
+    router.setState("Journal Entrieuus", " ", "");
   }
 });
 
