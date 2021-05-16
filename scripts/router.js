@@ -65,7 +65,7 @@ document.addEventListener('click', function(event) {
     document.body.appendChild(newEntry);
     prevEntry.remove();
   //  let entryNum = getNodeIndex(event.target) + 1;
-    router.setState("Entry "+event.target.id, "https://hebilli.github.io/Lab7/entry +'5'" , "single-entry");
+    router.setState("Entry "+5 , "https://hebilli.github.io/Lab7/entry" +'5' , "single-entry");
   }
   else if (event.target.isSameNode(document.querySelector('header img'))) { // settings button clicked (go to settings)
     router.setState("Settings", "https://hebilli.github.io/Lab7/#settings", "settings");
