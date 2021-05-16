@@ -65,13 +65,13 @@ document.addEventListener('click', function(event) {
     document.body.appendChild(newEntry);
     prevEntry.remove();
   //  let entryNum = getNodeIndex(event.target) + 1;
-    router.setState("Entry "+event.target.id, "/#entry"+event.target.id, "single-entry");
+    router.setState("Entry "+event.target.id, "https://hebilli.github.io/Lab7/entry +event.target.id" , "single-entry");
   }
   else if (event.target.isSameNode(document.querySelector('header img'))) { // settings button clicked (go to settings)
-    router.setState("Settings", "/#settings", "settings");
+    router.setState("Settings", "https://hebilli.github.io/Lab7/#settings", "settings");
   }
   else if (event.target.isSameNode(document.querySelector('header h1'))) {  // title header clicked (return to main page)
-    router.setState("Journal Entrieuus", " ", "");
+    router.setState("Journal Entrieuus", "https://hebilli.github.io/Lab7/", "");
   }
 });
 
