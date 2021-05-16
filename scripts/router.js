@@ -50,7 +50,7 @@ window.addEventListener('popstate', (event) => {
   }
   else {
     document.body.className = "";
-    document.querySelector('header h1').innerText = "Journal Entries";
+    document.querySelector('header h1').innerText = "Journal Entrieos";
   }
 });
 
