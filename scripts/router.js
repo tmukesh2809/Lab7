@@ -64,8 +64,8 @@ document.addEventListener('click', function(event) {
     newEntry.entry = event.target.entry;
     document.body.appendChild(newEntry);
     prevEntry.remove();
-    let entryNum = getNodeIndex(event.target) + 1;
-    router.setState("Entry "+entryNum, "/#entry"+entryNum, "single-entry");
+  //  let entryNum = getNodeIndex(event.target) + 1;
+    router.setState("Entry "+event.target.id, "/#entry"+event.target.id, "single-entry");
   }
   else if (event.target.isSameNode(document.querySelector('header img'))) { // settings button clicked (go to settings)
     router.setState("Settings", "/#settings", "settings");
@@ -75,10 +75,3 @@ document.addEventListener('click', function(event) {
   }
 });
 
-var getNodeIndex = function(node) {
-  let i = 0;
-  while((node = node.previousSibling) != null) {
-    i++;
-  }
-  return i;
-}
