@@ -41,6 +41,12 @@ window.addEventListener('popstate', (event) => {
   else {
     document.body.className = event.state['className'];
     document.querySelector('header h1').innerText = event.state['header'];
+    let entryPage = document.querySelector('entry-page');
+    entryPage.remove();
+    let NewentryPage = document.createElement('entry-page');
+    NewentryPage.entry = event.state['entrypg'];
+    document.body.appendChild(NewentryPage);
+   // let newEntryPage = document.querySelector('entry-page');
   }
 });
 
@@ -63,18 +69,18 @@ document.addEventListener('click', function(event) {
     counter++;
     jEntry = jEntry.nextSibling;
   }
-    router.setState("Entry "+ counter, "./#entry"+counter, "single-entry");
+    router.setState("Entry "+ counter, "./#entry"+counter, "single-entry", event.target.entry);
     let entryPage = document.createElement('entry-page');
     entryPage.entry = event.target.entry;
     document.body.appendChild(entryPage);
   }
   // if the element we click on is the title bar, then we go back to home page
   if (event.target == (document.querySelector('header h1'))) {  
-    router.setState("Journal Entries", "./", "");
+    router.setState("Journal Entries", "./", "", "");
   }
   //if the element we click is the settings icon, then we open the setting tab
   if (event.target == (document.querySelector('header img'))) { 
-    router.setState("Settings", "./#settings", "settings");
+    router.setState("Settings", "./#settings", "settings", "");
   }
 });
 
