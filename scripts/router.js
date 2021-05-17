@@ -8,8 +8,8 @@ export const router = {};
 // function to set the states and related properties of each page
 router.setState = function(titleheader, link, className) {
   let state = {'header': titleheader, 'link': link, 'className': className};
-  history.pushState(state, 'title', link);
   document.body.className = className;
   document.querySelector('header h1').innerText = titleheader;
+  history.pushState(state, 'title', link);
 }
 
