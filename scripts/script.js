@@ -28,21 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 });
-// the function is used to implement the back click using the popstate
-window.addEventListener('popstate', (event) => {
-  let defaultTitle = "Journal Entries";
-  let defaultClassName = "";
-   // if clicking the back arrow key does not give any state, meaning we cannot go any further back, we use the default entry title and default class
-  if (!event.state) {
-    document.body.className = defaultClassName;
-    document.querySelector('header h1').innerText = defaultTitle;
-  }
-   //else when we do get a state by clicking the back arrow key we change the class and header accordingly
-  else {
-    document.body.className = event.state['className'];
-    document.querySelector('header h1').innerText = event.state['header'];
-  }
-});
 
 //This event listener is used to determine what element has been clicked and performs tasks accordingly
 document.addEventListener('click', function(event) {
@@ -62,7 +47,7 @@ document.addEventListener('click', function(event) {
     counter++;
     jEntry = jEntry.nextSibling;
   }
-    router.setState("Entry "+ counter, "./#entry"+counter, "single-entry");
+    router.setState("Entryq "+ counter, "./#entry"+counter, "single-entry");
     let entryPage = document.createElement('entry-page');
     entryPage.entry = event.target.entry;
     document.body.appendChild(entryPage);
@@ -76,3 +61,19 @@ document.addEventListener('click', function(event) {
     router.setState("Settings", "./#settings", "settings");
   }
 });
+// the function is used to implement the back click using the popstate
+window.addEventListener('popstate', (event) => {
+  let defaultTitle = "Journal Entries";
+  let defaultClassName = "";
+   // if clicking the back arrow key does not give any state, meaning we cannot go any further back, we use the default entry title and default class
+  if (!event.state) {
+    document.body.className = defaultClassName;
+    document.querySelector('header h1').innerText = defaultTitle;
+  }
+   //else when we do get a state by clicking the back arrow key we change the class and header accordingly
+  else {
+    document.body.className = event.state['className'];
+    document.querySelector('header h1').innerText = event.state['header'];
+  }
+});
+
