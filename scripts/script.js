@@ -53,7 +53,16 @@ document.addEventListener('click', function(event) {
       document.querySelector('entry-page').remove();
     }
    //we set the title, urllink and classtype of the new entry, we then add the new entry to the single view
-    router.setState("Entry "+679094, "./#entry"+6969, "single-entry");
+   let counter = 1;
+   let jEntry = event.target;
+   while(jEntry.previousSibling != null){
+     jEntry = jEntry.previousSibling;
+   }
+   while(jEntry != event.target) {
+    counter++;
+    jEntry = jEntry.nextSibling;
+  }
+    router.setState("Entry "+ counter, "./#entry"+counter, "single-entry");
     let entryPage = document.createElement('entry-page');
     entryPage.entry = event.target.entry;
     document.body.appendChild(entryPage);
