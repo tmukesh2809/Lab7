@@ -47,7 +47,7 @@ document.addEventListener('click', function(event) {
     counter++;
     jEntry = jEntry.nextSibling;
   }
-    router.setState("Entryq "+ counter, "./#entry"+counter, "single-entry");
+    router.setState("Entry "+ counter, "./#entry"+counter, "single-entry");
     let entryPage = document.createElement('entry-page');
     entryPage.entry = event.target.entry;
     document.body.appendChild(entryPage);
